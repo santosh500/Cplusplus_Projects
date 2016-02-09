@@ -1,0 +1,38 @@
+#ifndef DOUBLELINKEDLIST_H
+#define DOUBLELINKEDLIST_H
+#include <cstdlib>
+#include "Node.h"
+#include <stdexcept>
+using namespace std;
+template <typename T>
+class DoubleLinkedList
+{
+   public:
+       DoubleLinkedList();
+       ~DoubleLinkedList();
+       bool isEmpty()const;
+       int size()const;
+       void pushFront(T value);
+       void pushBack(T value);
+       void printList()const;
+       bool removeBack();
+      
+       bool removeFront();
+       
+       bool remove(T value);
+      
+      void insertAhead(T listValue, T newvalue)throw (std::runtime_error);
+       void insertBehind(T listValue, T newValue)throw(std::runtime_error);
+       /*
+      
+      */
+      
+       Node<T>* find(T value) const;
+       
+   private:
+      Node<T>* m_front;
+      Node<T>* m_back;
+      int m_size;
+};
+#include "DoubleLinkedList.hpp"
+#endif 
